@@ -1,0 +1,28 @@
+version: '3'
+services:
+
+  api:
+    image: "node:10.16.0"
+    volumes:
+      - ./api/:/usr/src/api
+    working_dir: /usr/src/api
+    command: npm start
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+
+  postgres:
+    image: "postgres:9.6.1"
+    volumes:
+      - my_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "test"
+      POSTGRES_PASSWORD: "test"
+      POSTGRES_DB: "test"
+
+volumes:
+  my_data:
+    external: true
