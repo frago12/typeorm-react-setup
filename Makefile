@@ -5,8 +5,8 @@ install:
 	rm -rf api/node_modules
 	docker-compose -f docker-compose.builder.yml run --rm install
 
-start:
+up:
 	docker-compose up
 
-stop:
+down:
 	docker-compose down

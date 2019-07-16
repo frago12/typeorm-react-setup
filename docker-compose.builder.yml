@@ -2,7 +2,7 @@ version: '2'
 services:
 
   base:
-    image: "node:10.16.0"
+    image: node:10.16.0
     volumes:
       - ./api/:/usr/src/api
     working_dir: /usr/src/api

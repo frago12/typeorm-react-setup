@@ -18,6 +18,8 @@
       "typeorm": "0.2.18"
    },
    "scripts": {
-      "start": "ts-node-dev src/index.ts"
+      "start": "ts-node-dev src/index.ts",
+      "build": "tsc",
+      "prod": "node ./dist/index.js"
    }
 }
