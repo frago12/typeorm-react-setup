@@ -12,7 +12,6 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 createConnection().then(async connection => {
-
     const app = express();
     app.use(helmet())
     app.use(morgan(':method :url :status :response-time ms - :res[content-length]'))
@@ -30,8 +29,8 @@ createConnection().then(async connection => {
         });
     });
 
-    app.listen(3000);
+    app.listen(3001);
 
-    console.log("Express server has started on port 3000. Open http://localhost:3000/users to see results");
+    console.log("Express server has started on port 3001. Open http://localhost:3001/users to see results");
 
 }).catch(error => console.log(error));

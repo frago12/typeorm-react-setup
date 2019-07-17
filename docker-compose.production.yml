@@ -12,7 +12,7 @@ services:
       TYPEORM_MIGRATIONS: "dist/migration/**/*.js"
       TYPEORM_SUBSCRIBERS: "dist/subscriber/**/*.js"
     ports:
-      - 3000:3000
+      - 3001:3001
     depends_on:
       - postgres
 
