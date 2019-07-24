@@ -2,6 +2,7 @@ version: '3'
 services:
 
   web:
+    container_name: web
     image: trs:0.1.0
     build: .
     command: npm run prod
@@ -17,6 +18,7 @@ services:
       - postgres
 
   postgres:
+    container_name: db
     image: "postgres:9.6.1"
     restart: always
     volumes:

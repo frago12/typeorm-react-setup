@@ -30,7 +30,11 @@ createConnection().then(async connection => {
     });
 
     app.listen(3001);
-
-    console.log("Express server has started on port 3001. Open http://localhost:3001/users to see results");
+    if (process.env.NODE_ENV === 'production') {
+        app.use('/', express.static(path.join(__dirname, '../public')))
+        app.get('*', (req, res) => {
+            res.sendFile(path.join(__dirname, '../public/index.html'))
+        })
+    }
 
 }).catch(error => console.log(error));

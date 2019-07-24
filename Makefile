@@ -10,3 +10,6 @@ up:
 
 down:
 	docker-compose down
+
+deploy:
+	./bin/deploy.sh

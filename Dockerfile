@@ -5,8 +5,12 @@ RUN apk add --update --no-cache \
   make \
   g++
 
-EXPOSE 3000
+EXPOSE 3001
 
+# copy frontend
+COPY ./webapp/build /usr/src/web/public
+
+# build api
 COPY ./api /usr/src/web
 WORKDIR /usr/src/web
 
